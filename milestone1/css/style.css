@@ -203,6 +203,8 @@ RIGHT SECTION
 /* main chat */
 .main-chat {
   flex-grow: 1;
+  background-image: url('../../img/mine.jpg');
+  overflow-y: scroll;
 }
 
 /* footer-input */
@@ -243,4 +245,30 @@ RIGHT SECTION
   font-size: 20px;
   color: #6b7376;
   cursor: pointer;
+}
+
+/* 
+---------------------
+CUSTOM SCROLL-BAR
+---------------------
+*/
+
+/* Larghezza */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Percorso (in questo caso nascosto) */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* stile scroll-bar */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 156, 156, 0.8);
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
