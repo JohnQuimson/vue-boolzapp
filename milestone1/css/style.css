@@ -17,7 +17,8 @@ body {
   height: 95vh;
   width: 80vw; /* Modifica questo */
   border: 1px solid red;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: lightsteelblue;
   display: flex;
 }
 
@@ -30,4 +31,50 @@ body {
 .right-section {
   flex-grow: 1;
   border: 1px solid green;
+}
+
+/*
+--------------------
+LEFT SECTION
+--------------------
+*/
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: darkolivegreen;
+}
+
+/* profilo */
+.cont-foto {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cont-foto img {
+  height: 100%;
+}
+
+.profile-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.info-profilo {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons-myprofile {
+  display: flex;
+  gap: 20px;
+}
+
+.icons-myprofile i {
+  font-size: 20px;
+  color: #b1b1b1;
 }
