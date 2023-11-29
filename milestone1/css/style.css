@@ -46,7 +46,7 @@ LEFT SECTION
   background-color: darkolivegreen;
 }
 
-/* profilo */
+/* profile */
 .cont-foto {
   height: 50px;
   width: 50px;
@@ -77,4 +77,39 @@ LEFT SECTION
 .icons-myprofile i {
   font-size: 20px;
   color: #b1b1b1;
+}
+
+/* Notifications */
+.notifications {
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.cont-bell-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+}
+
+.cont-bell-icon i {
+  font-size: 20px;
+  color: #8edafc;
+}
+
+.notif-title {
+  font-size: 12px;
+  font-weight: 800; /* sistemare font weight*/
+}
+
+.notifications a {
+  font-size: 14px;
+  color: #4f7485;
 }
