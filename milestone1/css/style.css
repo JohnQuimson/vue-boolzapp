@@ -8,4 +8,13 @@ body {
   font-family: 'Lato', sans-serif;
   background: linear-gradient(to top, #dcdbd2 85%, #009688 15%);
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 95vh;
+  width: 80vw; /* Modifica questo */
+  border: 1px solid red;
 }
