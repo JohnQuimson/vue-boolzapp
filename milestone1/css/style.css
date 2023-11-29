@@ -177,3 +177,42 @@ LEFT SECTION
   font-size: 12px;
   color: #b6b9bb;
 }
+
+/*
+--------------------
+RIGHT SECTION
+--------------------
+*/
+.right-section {
+  display: flex;
+  flex-direction: column;
+}
+/* header */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #eaeaea;
+}
+
+#last-access {
+  font-size: 12px;
+  color: #6b7376;
+}
+/* main chat */
+.main-chat {
+  flex-grow: 1;
+}
+
+/* footer-input */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-input-left {
+  width: 80px;
+  height: 50px;
+  border: 1px solid red;
+}
