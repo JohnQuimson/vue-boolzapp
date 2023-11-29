@@ -74,13 +74,84 @@
             </div>
           </div>
           <!-- Contacts list -->
+          <div class="contact-list-section">
+            <!-- Profile -->
+            <ul>
+              <li v-for="(contact, index) in contacts">
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img
+                      :src="`.${contact.avatar}`"
+                      :alt="`foto di ${contact.name}`"
+                    />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>{{ contact.name }}</strong>
+                    <p id="last-message">Ultimo messaggio invitato</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>12:00</span>
+                </div>
+              </li>
+              <!-- PROVA -->
+              <li>
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img src="../img/avatar_io.jpg" alt="prova" />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>Prova</strong>
+                    <p id="last-message">Prova</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>Prova</span>
+                </div>
+              </li>
+              <li>
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img src="../img/avatar_io.jpg" alt="prova" />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>Prova</strong>
+                    <p id="last-message">Prova</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>Prova</span>
+                </div>
+              </li>
+              <li>
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img src="../img/avatar_io.jpg" alt="prova" />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>Prova</strong>
+                    <p id="last-message">Prova</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>Prova</span>
+                </div>
+              </li>
+              <!-- PROVA -->
+            </ul>
+          </div>
         </div>
         <!-- RIGHT SECTION -->
         <div class="right-section">ciao</div>
       </div>
     </div>
+
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Vue -->
+
+    <!-- My JS -->
+    <script src="js/main.js"></script>
+    <!-- My JS -->
   </body>
 </html>

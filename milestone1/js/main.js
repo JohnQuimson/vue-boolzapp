@@ -28,6 +28,7 @@ createApp({
             },
           ],
         },
+
         {
           name: 'Fabio',
           avatar: './img/avatar_2.jpg',

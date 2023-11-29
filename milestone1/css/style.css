@@ -26,6 +26,8 @@ body {
   width: 35%;
   height: 100%;
   border: 1px solid purple;
+  display: flex;
+  flex-direction: column;
 }
 
 .right-section {
@@ -43,7 +45,7 @@ LEFT SECTION
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: darkolivegreen;
+  background-color: #eaeaea;
 }
 
 /* profile */
@@ -56,6 +58,7 @@ LEFT SECTION
 
 .cont-foto img {
   height: 100%;
+  object-fit: cover;
 }
 
 .profile-left {
@@ -67,6 +70,7 @@ LEFT SECTION
 .info-profilo {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .icons-myprofile {
@@ -104,9 +108,9 @@ LEFT SECTION
   color: #8edafc;
 }
 
-.notif-title {
-  font-size: 12px;
-  font-weight: 800; /* sistemare font weight*/
+#notif-title {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .notifications a {
@@ -139,4 +143,37 @@ LEFT SECTION
 
 .cont-search input::placeholder {
   padding-left: 20px;
+}
+
+/* contacts */
+.contact-list-section {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.contact-list-section ul {
+  /* display: flex;
+  flex-direction: column;
+  flex-grow: 1; */
+  list-style-type: none;
+  overflow-y: scroll;
+}
+
+.contact-list-section ul li {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#last-message {
+  font-size: 14px;
+  color: #b6b9bb;
+}
+
+.profile-time span {
+  font-size: 12px;
+  color: #b6b9bb;
 }
