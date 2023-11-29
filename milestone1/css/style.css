@@ -113,3 +113,30 @@ LEFT SECTION
   font-size: 14px;
   color: #4f7485;
 }
+
+/* Search */
+.search-section {
+  background-color: #fafafa;
+}
+
+.cont-search {
+  width: 100%;
+  display: flex;
+  padding: 5px;
+}
+
+.cont-search button {
+  width: 70px;
+  height: 35px;
+  background-color: #ffffff;
+  border: 1px solid #fafafa;
+}
+
+.cont-search input {
+  flex-grow: 1;
+  border: 1px solid #fafafa;
+}
+
+.cont-search input::placeholder {
+  padding-left: 20px;
+}
