@@ -15,8 +15,7 @@ body {
 
 .container {
   height: 95vh;
-  width: 80vw; /* Modifica questo */
-  border: 1px solid red;
+  width: 80vw;
   /* background-color: #ffffff; */
   background-color: lightsteelblue;
   display: flex;
@@ -25,14 +24,12 @@ body {
 .left-sidebar {
   width: 35%;
   height: 100%;
-  border: 1px solid purple;
   display: flex;
   flex-direction: column;
 }
 
 .right-section {
   flex-grow: 1;
-  border: 1px solid green;
 }
 
 /*
@@ -194,6 +191,7 @@ RIGHT SECTION
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #eaeaea;
+  border-left: 1px solid #d6d6d6;
 }
 
 #last-access {
@@ -213,6 +211,7 @@ RIGHT SECTION
   align-items: center;
   padding: 10px;
   background-color: #f3eeea;
+  border-left: 1px solid #d6d6d6;
 }
 
 .footer-input-left {
@@ -242,7 +241,7 @@ RIGHT SECTION
 }
 
 .footer-right i {
-  font-size: 20px;
+  font-size: 24px;
   color: #6b7376;
   cursor: pointer;
 }
