@@ -169,7 +169,7 @@ LEFT SECTION
   justify-content: space-between;
 }
 
-#last-message {
+.last-message {
   font-size: 14px;
   color: #b6b9bb;
 }
