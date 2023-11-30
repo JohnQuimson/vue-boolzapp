@@ -83,28 +83,30 @@
           <!-- Contacts list -->
           <div class="contact-list-section">
             <!-- Profile -->
-            <ul v-if="filteredTask().length > 0">
-              <li
-                v-for="(contact, index) in contacts"
-                @click="changeContact(index)"
-                :class="index === currentContact ? 'active' : ''"
-              >
-                <div class="profile-left">
-                  <div class="cont-foto">
-                    <img
-                      :src="`.${contact.avatar}`"
-                      :alt="`foto di ${contact.name}`"
-                    />
+            <ul>
+              <template v-for="(contact, index) in contacts">
+                <li
+                  @click="changeContact(index)"
+                  :class="index === currentContact ? 'active' : ''"
+                >
+                  <div class="profile-left">
+                    <div class="cont-foto">
+                      <img
+                        :src="`.${contact.avatar}`"
+                        :alt="`foto di ${contact.name}`"
+                      />
+                    </div>
+                    <div class="info-profilo">
+                      <strong>{{ contact.name }}</strong>
+                      <p class="last-message">Ultimo messaggio invitato</p>
+                    </div>
                   </div>
-                  <div class="info-profilo">
-                    <strong>{{ contact.name }}</strong>
-                    <p class="last-message">Ultimo messaggio invitato</p>
+                  <div class="profile-time">
+                    <span>12:00</span>
                   </div>
-                </div>
-                <div class="profile-time">
-                  <span>12:00</span>
-                </div>
-              </li>
+                </li>
+              </template>
+
               <!-- PROVA -->
               <li>
                 <div class="profile-left">
