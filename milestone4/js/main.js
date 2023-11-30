@@ -8,6 +8,7 @@ createApp({
       currentContact: 0,
       newMessage: '',
       botAnswer: 'Ok',
+      keyContact: '',
       contacts: [
         {
           name: 'Michele',
@@ -194,6 +195,11 @@ createApp({
         message: this.botAnswer,
         status: 'received',
       });
+    },
+    filteredContact() {
+      if (this.keyContact.trim() != '') {
+        return this.contacts[this.currentContact].name.filter(())
+      }
     },
   },
 }).mount('#app');
