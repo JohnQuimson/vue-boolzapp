@@ -7,4 +7,9 @@
 Usando HTML e CSS vado a ricreare l'interfaccia principale;
 sezione contatti sulla sinistra e sezioone chat sulla destra, per aggiungere i contatti utilizzerò il framework js, Vue; con un v-for vado ad aggiungere tanti elementi quanti sono dentro l'array assegnato dall'insegnante
 
+#### Milestone 2
+
+- Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+- Click sul contatto mostra la conversazione del contatto cliccato
+
 ![screenshot](/img/Boolzapp-screenshot.png)
