@@ -186,7 +186,7 @@ createApp({
         status: 'sent',
       });
       this.newMessage = '';
-      this.answerMessage;
+      setTimeout(this.answerMessage, 1_000);
     },
     answerMessage() {
       this.contacts[this.currentContact].messages.push({
