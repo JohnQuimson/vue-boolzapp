@@ -168,7 +168,16 @@
           </div>
           <!-- main chat -->
           <div class="main-chat">
-            <div class="cont-chat">ciao</div>
+            <div class="cont-chat">
+              <ul>
+                <li
+                  v-for="element in contacts[currentContact].messages"
+                  :class="element.status"
+                >
+                  {{ element.message }}
+                </li>
+              </ul>
+            </div>
           </div>
           <!-- footer-input -->
           <div class="footer-right">

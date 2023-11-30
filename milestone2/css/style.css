@@ -213,9 +213,31 @@ RIGHT SECTION
 }
 
 .cont-chat {
-  border: 1px solid red;
   width: 85%;
   height: 90%;
+}
+
+.cont-chat ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sent {
+  background-color: #d5f9ba;
+  align-self: flex-end;
+  width: 40%;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.received {
+  background-color: #ffff;
+  align-self: flex-start;
+  width: 40%;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 /* footer-input */
