@@ -75,6 +75,10 @@ LEFT SECTION
   gap: 20px;
 }
 
+.icons-myprofile a {
+  display: inline-block;
+}
+
 .icons-myprofile i {
   font-size: 20px;
   color: #b1b1b1;
@@ -238,6 +242,10 @@ RIGHT SECTION
 .footer-input-right {
   width: 80px;
   text-align: center;
+}
+
+.footer-right a {
+  display: inline-block;
 }
 
 .footer-right i {
