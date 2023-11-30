@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       currentContact: 0,
+      newMessage: '',
       contacts: [
         {
           name: 'Michele',
@@ -174,9 +175,16 @@ createApp({
   },
   methods: {
     changeContact(index) {
-      console.log('cambio contatto');
       this.currentContact = index;
-      console.log(this.currentContact);
+      console.log(`Contatto[${index}]`);
+    },
+    addMessage() {
+      this.contacts[this.currentContact].messages.push({
+        date: 'orario', //MODIFICARE QUI
+        message: this.newMessage,
+        status: 'sent',
+      });
+      this.newMessage = '';
     },
   },
 }).mount('#app');

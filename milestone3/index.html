@@ -197,8 +197,10 @@
             <div class="footer-input-center">
               <input
                 type="text"
-                id="new-task"
+                id="new-message"
                 placeholder="Scrivi un messaggio"
+                v-model="newMessage"
+                @keyup.enter="addMessage"
               />
             </div>
             <div class="footer-input-right">

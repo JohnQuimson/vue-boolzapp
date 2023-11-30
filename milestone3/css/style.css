@@ -142,10 +142,6 @@ LEFT SECTION
   border: 1px solid #fafafa;
 }
 
-.cont-search input::placeholder {
-  padding-left: 20px;
-}
-
 /* contacts */
 .contact-list-section {
   background-color: #ffffff;
@@ -293,10 +289,6 @@ RIGHT SECTION
   border: none;
 }
 
-.footer-input-center input::placeholder {
-  padding-left: 20px;
-}
-
 .footer-input-right {
   width: 80px;
   text-align: center;
@@ -336,4 +328,22 @@ CUSTOM SCROLL-BAR
 /* Hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #888;
+}
+
+/* 
+---------------------
+CUSTOM INPUT
+---------------------
+*/
+
+input {
+  padding: 0 10px;
+}
+
+.footer-right input {
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
 }
