@@ -137,6 +137,11 @@ LEFT SECTION
   border: 1px solid #fafafa;
 }
 
+.cont-search button i {
+  color: #b6bcbd;
+  font-size: 16px;
+}
+
 .cont-search input {
   flex-grow: 1;
   border: 1px solid #fafafa;

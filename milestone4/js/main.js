@@ -194,7 +194,6 @@ createApp({
         message: this.botAnswer,
         status: 'received',
       });
-      this.botAnswer = '';
     },
   },
 }).mount('#app');
