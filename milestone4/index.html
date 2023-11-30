@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../img/icon.ico" />
+    <!-- Favicon -->
+    <!-- Google Font Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Font Lato -->
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome -->
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- My CSS -->
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="container">
+        <!-- LEFT SECTION -->
+        <div class="left-sidebar">
+          <!-- My Profile -->
+          <div class="header-left">
+            <div class="profile-left">
+              <div class="cont-foto">
+                <img src="../img/avatar_2.jpg" alt="my-avatar" />
+              </div>
+              <div class="info-profilo">
+                <strong>John</strong>
+                <!-- <p>accesso</p> -->
+              </div>
+            </div>
+            <div class="icons-myprofile">
+              <a href="#">
+                <i class="fa-solid fa-circle-notch"></i>
+              </a>
+              <a href="#">
+                <i class="fa-solid fa-message"></i>
+              </a>
+              <a href="#">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Notifications -->
+          <div class="notifications">
+            <div class="cont-bell-icon">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="info-profilo">
+              <p id="notif-title">Ricevi notifiche di nuovi messaggi</p>
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <!-- Search -->
+          <div class="search-section">
+            <div class="cont-search">
+              <button type="button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input
+                type="text"
+                id="new-task"
+                placeholder="Cerca o inizia una nuova chat"
+              />
+            </div>
+          </div>
+          <!-- Contacts list -->
+          <div class="contact-list-section">
+            <!-- Profile -->
+            <ul>
+              <li
+                v-for="(contact, index) in contacts"
+                @click="changeContact(index)"
+                :class="index === currentContact ? 'active' : ''"
+              >
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img
+                      :src="`.${contact.avatar}`"
+                      :alt="`foto di ${contact.name}`"
+                    />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>{{ contact.name }}</strong>
+                    <p class="last-message">Ultimo messaggio invitato</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>12:00</span>
+                </div>
+              </li>
+              <!-- PROVA -->
+              <li>
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img src="../img/avatar_io.jpg" alt="prova" />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>Prova</strong>
+                    <p id="last-message">Prova</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>Prova</span>
+                </div>
+              </li>
+              <li>
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img src="../img/avatar_io.jpg" alt="prova" />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>Prova</strong>
+                    <p id="last-message">Prova</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>Prova</span>
+                </div>
+              </li>
+              <li>
+                <div class="profile-left">
+                  <div class="cont-foto">
+                    <img src="../img/avatar_io.jpg" alt="prova" />
+                  </div>
+                  <div class="info-profilo">
+                    <strong>Prova</strong>
+                    <p id="last-message">Prova</p>
+                  </div>
+                </div>
+                <div class="profile-time">
+                  <span>Prova</span>
+                </div>
+              </li>
+              <!-- PROVA -->
+            </ul>
+          </div>
+        </div>
+        <!-- RIGHT SECTION -->
+        <div class="right-section">
+          <!-- header -->
+          <div class="header-right">
+            <div class="profile-left">
+              <div class="cont-foto">
+                <img
+                  :src="`.${contacts[currentContact].avatar}`"
+                  alt="my-avatar"
+                />
+              </div>
+              <div class="info-profilo">
+                <strong>{{ contacts[currentContact].name }}</strong>
+                <p id="last-access">Ultimo accesso oggi alle 12:00</p>
+              </div>
+            </div>
+            <div class="icons-myprofile">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <!-- main chat -->
+          <div class="main-chat">
+            <div class="cont-chat">
+              <ul>
+                <li
+                  v-for="element in contacts[currentContact].messages"
+                  :class="element.status"
+                >
+                  <p>{{ element.message }}</p>
+                  <span>{{ element.date }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- footer-input -->
+          <div class="footer-right">
+            <div class="footer-input-left">
+              <a href="#">
+                <i class="fa-regular fa-face-smile"></i>
+              </a>
+            </div>
+            <div class="footer-input-center">
+              <input
+                type="text"
+                id="new-message"
+                placeholder="Scrivi un messaggio"
+                v-model="newMessage"
+                @keyup.enter="addMessage"
+              />
+            </div>
+            <div class="footer-input-right">
+              <a href="#">
+                <i class="fa-solid fa-microphone"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Vue -->
+
+    <!-- My JS -->
+    <script src="js/main.js"></script>
+    <!-- My JS -->
+  </body>
+</html>
