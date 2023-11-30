@@ -169,6 +169,15 @@ LEFT SECTION
   justify-content: space-between;
 }
 
+.contact-list-section ul li:hover {
+  cursor: pointer;
+  background-color: #e9ebeb;
+}
+
+.active {
+  background-color: #e9ebeb;
+}
+
 .last-message {
   font-size: 14px;
   color: #b6b9bb;

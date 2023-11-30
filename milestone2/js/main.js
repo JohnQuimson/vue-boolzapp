@@ -172,4 +172,11 @@ createApp({
       ],
     };
   },
+  methods: {
+    changeContact(index) {
+      console.log('cambio contatto');
+      this.currentContact = index;
+      console.log(this.currentContact);
+    },
+  },
 }).mount('#app');
