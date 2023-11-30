@@ -181,7 +181,8 @@
                   v-for="element in contacts[currentContact].messages"
                   :class="element.status"
                 >
-                  {{ element.message }}
+                  <p>{{ element.message }}</p>
+                  <span>Orario</span>
                 </li>
               </ul>
             </div>
