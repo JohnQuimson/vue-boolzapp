@@ -207,6 +207,15 @@ RIGHT SECTION
   flex-grow: 1;
   background-image: url('../../img/mine.jpg');
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-chat {
+  border: 1px solid red;
+  width: 85%;
+  height: 90%;
 }
 
 /* footer-input */
