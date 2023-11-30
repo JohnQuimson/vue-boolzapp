@@ -7,6 +7,7 @@ createApp({
     return {
       currentContact: 0,
       newMessage: '',
+      botAnswer: 'Ok',
       contacts: [
         {
           name: 'Michele',
@@ -110,8 +111,8 @@ createApp({
           ],
         },
         {
-          name: 'Claudia',
-          avatar: './img/avatar_6.jpg',
+          name: 'Valeria',
+          avatar: './img/avatar_io.jpg',
           visible: true,
           messages: [
             {
@@ -185,6 +186,15 @@ createApp({
         status: 'sent',
       });
       this.newMessage = '';
+      this.answerMessage;
+    },
+    answerMessage() {
+      this.contacts[this.currentContact].messages.push({
+        date: 'orario', //MODIFICARE QUI
+        message: this.botAnswer,
+        status: 'received',
+      });
+      this.botAnswer = '';
     },
   },
 }).mount('#app');
