@@ -9,6 +9,7 @@ createApp({
       newMessage: '',
       botAnswer: 'Ok',
       keyContact: '',
+      visibleChevron: false,
       contacts: [
         {
           name: 'Michele',
@@ -205,6 +206,11 @@ createApp({
           element.visible = false;
         }
       });
+    },
+
+    showChevron() {
+      console.log('click chevron');
+      this.visibleChevron = true;
     },
 
     deleteMessage(index) {
