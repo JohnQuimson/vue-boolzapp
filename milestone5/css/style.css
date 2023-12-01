@@ -267,6 +267,7 @@ RIGHT SECTION
   font-size: 12px;
   color: #b9bfbb;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .cont-chat li p {

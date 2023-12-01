@@ -147,8 +147,18 @@
                   <i
                     class="fa-solid fa-chevron-down"
                     v-show="visibleChevron"
-                    @click="deleteMessage"
+                    @click="showDropdownChevron"
                   ></i>
+                  <select
+                    name="chevron-dropdown"
+                    id="chevron-dropdown"
+                    v-show="visibleDropdownChevron"
+                    v-model="userChoice"
+                  >
+                    <option value="chioce1">Rispondi</option>
+                    <option value="chioce2">Importante</option>
+                    <option value="chioce3">Elimina</option>
+                  </select>
                   <p>{{ element.message }}</p>
                   <span>{{ element.date }}</span>
                 </li>

@@ -10,6 +10,8 @@ createApp({
       botAnswer: 'Ok',
       keyContact: '',
       visibleChevron: false,
+      visibleDropdownChevron: false,
+      userChoice: '',
       contacts: [
         {
           name: 'Michele',
@@ -211,6 +213,10 @@ createApp({
     showChevron() {
       console.log('click chevron');
       this.visibleChevron = true;
+    },
+
+    showDropdownChevron() {
+      this.visibleDropdownChevron = true;
     },
 
     deleteMessage(index) {
