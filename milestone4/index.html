@@ -140,9 +140,11 @@
             <div class="cont-chat">
               <ul>
                 <li
-                  v-for="element in contacts[currentContact].messages"
+                  v-for="(element, index) in contacts[currentContact].messages"
                   :class="element.status"
+                  @click="deleteMessage(index)"
                 >
+                  <i class="fa-solid fa-chevron-down"></i>
                   <p>{{ element.message }}</p>
                   <span>{{ element.date }}</span>
                 </li>
