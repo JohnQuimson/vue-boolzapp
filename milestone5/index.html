@@ -142,7 +142,7 @@
                 <li
                   v-for="element in contacts[currentContact].messages"
                   :class="element.status"
-                  @click="showChevron"
+                  @click="showChevron(index)"
                 >
                   <i
                     class="fa-solid fa-chevron-down"
@@ -155,9 +155,8 @@
                     v-show="visibleDropdownChevron"
                     v-model="userChoice"
                   >
-                    <option value="chioce1">Rispondi</option>
-                    <option value="chioce2">Importante</option>
-                    <option value="chioce3">Elimina</option>
+                    <option value="chioce1">Info</option>
+                    <option value="chioce3">Delete</option>
                   </select>
                   <p>{{ element.message }}</p>
                   <span>{{ element.date }}</span>

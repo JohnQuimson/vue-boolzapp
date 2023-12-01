@@ -211,7 +211,6 @@ createApp({
     },
 
     showChevron() {
-      console.log('click chevron');
       this.visibleChevron = true;
     },
 
