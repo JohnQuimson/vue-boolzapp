@@ -72,85 +72,44 @@
               <button type="button">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
-              <input
-                type="text"
-                id="key-contact"
-                placeholder="Cerca o inizia una nuova chat"
-                v-model="keyContact"
-              />
+              <div class="search-input">
+                <input
+                  type="text"
+                  id="key-contact"
+                  placeholder="Cerca o inizia una nuova chat"
+                  v-model="keyContact"
+                  @input="filteredContact"
+                />
+              </div>
             </div>
           </div>
           <!-- Contacts list -->
           <div class="contact-list-section">
             <!-- Profile -->
             <ul>
-              <template v-for="(contact, index) in contacts">
-                <li
-                  @click="changeContact(index)"
-                  :class="index === currentContact ? 'active' : ''"
-                >
-                  <div class="profile-left">
-                    <div class="cont-foto">
-                      <img
-                        :src="`.${contact.avatar}`"
-                        :alt="`foto di ${contact.name}`"
-                      />
-                    </div>
-                    <div class="info-profilo">
-                      <strong>{{ contact.name }}</strong>
-                      <p class="last-message">Ultimo messaggio invitato</p>
-                    </div>
-                  </div>
-                  <div class="profile-time">
-                    <span>12:00</span>
-                  </div>
-                </li>
-              </template>
-
-              <!-- PROVA -->
-              <li>
+              <li
+                v-for="(contact, index) in contacts"
+                @click="changeContact(index)"
+                :class="index === currentContact ? 'active' : ''"
+                v-show="contact.visible"
+              >
                 <div class="profile-left">
                   <div class="cont-foto">
-                    <img src="../img/avatar_io.jpg" alt="prova" />
+                    <img
+                      :src="`.${contact.avatar}`"
+                      :alt="`foto di ${contact.name}`"
+                    />
                   </div>
                   <div class="info-profilo">
-                    <strong>Prova</strong>
-                    <p id="last-message">Prova</p>
+                    <strong>{{ contact.name }}</strong>
+                    <p class="last-message">Ultimo messaggio invitato</p>
                   </div>
                 </div>
                 <div class="profile-time">
-                  <span>Prova</span>
+                  <span>12:00</span>
                 </div>
               </li>
-              <li>
-                <div class="profile-left">
-                  <div class="cont-foto">
-                    <img src="../img/avatar_io.jpg" alt="prova" />
-                  </div>
-                  <div class="info-profilo">
-                    <strong>Prova</strong>
-                    <p id="last-message">Prova</p>
-                  </div>
-                </div>
-                <div class="profile-time">
-                  <span>Prova</span>
-                </div>
-              </li>
-              <li>
-                <div class="profile-left">
-                  <div class="cont-foto">
-                    <img src="../img/avatar_io.jpg" alt="prova" />
-                  </div>
-                  <div class="info-profilo">
-                    <strong>Prova</strong>
-                    <p id="last-message">Prova</p>
-                  </div>
-                </div>
-                <div class="profile-time">
-                  <span>Prova</span>
-                </div>
-              </li>
-              <!-- PROVA -->
+              <!-- </template> -->
             </ul>
           </div>
         </div>

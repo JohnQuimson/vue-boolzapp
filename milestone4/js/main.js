@@ -196,10 +196,15 @@ createApp({
         status: 'received',
       });
     },
-    // filteredContact() {
-    //   if (this.keyContact.trim() != '') {
-    //     return this.contacts[this.currentContact].name.filter(())
-    //   }
-    // },
+
+    filteredContact() {
+      this.contacts.forEach((element) => {
+        if (element.name.includes(this.keyContact)) {
+          element.visible = true;
+        } else {
+          element.visible = false;
+        }
+      });
+    },
   },
 }).mount('#app');
