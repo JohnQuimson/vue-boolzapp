@@ -138,27 +138,32 @@
           <!-- main chat -->
           <div class="main-chat">
             <div class="cont-chat">
-              <ul>
+              <ul class="cont-mess">
                 <li
-                  v-for="element in contacts[currentContact].messages"
+                  class="message"
+                  v-for="(element, index) in contacts[currentContact].messages"
                   :class="element.status"
-                  @click="showChevron(index)"
+                  @click="showChevron"
                 >
-                  <i
-                    class="fa-solid fa-chevron-down"
-                    v-show="visibleChevron"
-                    @click="showDropdownChevron"
-                  ></i>
-                  <select
-                    name="chevron-dropdown"
-                    id="chevron-dropdown"
-                    v-show="visibleDropdownChevron"
-                    v-model="userChoice"
-                  >
-                    <option value="chioce1">Info</option>
-                    <option value="chioce3">Delete</option>
-                  </select>
-                  <p>{{ element.message }}</p>
+                  <div class="top-message">
+                    <!-- testo messaggio -->
+                    <p>{{ element.message }}</p>
+                    <!-- Menù dropdown -->
+                    <div class="dropdown-cont">
+                      <i
+                        class="fa-solid fa-chevron-down"
+                        v-show="visibleChevron"
+                        @click.stop="showDropdownChevron(contacts[currentContact].messages.indexOf(element))"
+                      ></i>
+                      <ul
+                        class="dropd-list-cont"
+                        v-show="visibleDropdownChevron && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
+                      >
+                        <li>Info</li>
+                        <li @click="deleteMessage">Delete message</li>
+                      </ul>
+                    </div>
+                  </div>
                   <span>{{ element.date }}</span>
                 </li>
               </ul>

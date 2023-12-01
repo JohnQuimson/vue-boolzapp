@@ -11,6 +11,7 @@ createApp({
       keyContact: '',
       visibleChevron: false,
       visibleDropdownChevron: false,
+      currentClickMessage: 0,
       userChoice: '',
       contacts: [
         {
@@ -211,11 +212,17 @@ createApp({
     },
 
     showChevron() {
+      console.log('click message');
       this.visibleChevron = true;
     },
 
-    showDropdownChevron() {
+    showDropdownChevron(index) {
+      // console.log(`Hai schiacciato il messaggio con indice: ${index}`);
       this.visibleDropdownChevron = true;
+      // this.contacts[this.currentContact].messages.indexOf(element);
+      this.currentClickMessage = index;
+      console.log(`L'indice è: ${this.currentClickMessage}`);
+      console.log(`Il contatto è: ${this.currentContact}`);
     },
 
     deleteMessage(index) {
