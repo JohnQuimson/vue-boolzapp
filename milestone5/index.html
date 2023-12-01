@@ -142,7 +142,13 @@
                 <li
                   v-for="element in contacts[currentContact].messages"
                   :class="element.status"
+                  @click="showChevron"
                 >
+                  <i
+                    class="fa-solid fa-chevron-down"
+                    v-show="visibleChevron"
+                    @click="deleteMessage"
+                  ></i>
                   <p>{{ element.message }}</p>
                   <span>{{ element.date }}</span>
                 </li>

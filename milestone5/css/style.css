@@ -251,7 +251,7 @@ RIGHT SECTION
   background-color: #d5f9ba;
   align-self: flex-end;
   width: 40%;
-  padding: 15px 10px 5px 15px;
+  padding: 8px 10px 5px 15px;
   border-radius: 15px;
 }
 
@@ -259,8 +259,14 @@ RIGHT SECTION
   background-color: #ffff;
   align-self: flex-start;
   width: 40%;
-  padding: 15px 10px 5px 15px;
+  padding: 8px 10px 5px 15px;
   border-radius: 15px;
+}
+
+.cont-chat li i {
+  font-size: 12px;
+  color: #b9bfbb;
+  align-self: flex-end;
 }
 
 .cont-chat li p {
@@ -270,7 +276,7 @@ RIGHT SECTION
   padding-right: 20px;
 }
 
-.cont-chat span {
+.cont-chat li span {
   font-size: 12px;
   color: #b9bfbb;
   align-self: flex-end;
