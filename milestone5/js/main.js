@@ -212,21 +212,19 @@ createApp({
     },
 
     showChevron() {
-      console.log('click message');
       this.visibleChevron = true;
     },
 
     showDropdownChevron(index) {
-      // console.log(`Hai schiacciato il messaggio con indice: ${index}`);
       this.visibleDropdownChevron = true;
-      // this.contacts[this.currentContact].messages.indexOf(element);
       this.currentClickMessage = index;
-      console.log(`L'indice è: ${this.currentClickMessage}`);
-      console.log(`Il contatto è: ${this.currentContact}`);
     },
 
     deleteMessage(index) {
-      this.contacts[this.currentContact].messages.splice(index, 1);
+      this.contacts[this.currentContact].messages.splice(
+        this.currentClickMessage,
+        1
+      );
     },
   },
 }).mount('#app');
