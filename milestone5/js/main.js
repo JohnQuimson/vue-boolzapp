@@ -13,6 +13,8 @@ createApp({
       visibleDropdownChevron: false,
       currentClickMessage: 0,
       userChoice: '',
+      currentTime: null,
+
       contacts: [
         {
           name: 'Michele',
@@ -186,7 +188,7 @@ createApp({
     },
     addMessage() {
       this.contacts[this.currentContact].messages.push({
-        date: 'orario', //MODIFICARE QUI
+        date: this.currentTime,
         message: this.newMessage,
         status: 'sent',
       });
@@ -195,7 +197,7 @@ createApp({
     },
     answerMessage() {
       this.contacts[this.currentContact].messages.push({
-        date: 'orario', //MODIFICARE QUI
+        date: this.currentTime, //MODIFICARE QUI
         message: this.botAnswer,
         status: 'received',
       });
@@ -227,5 +229,17 @@ createApp({
       );
       this.currentClickMessage = undefined;
     },
+
+    //Time with LUXON
+    updateCurrentTime() {
+      this.currentTime = luxon.DateTime.now().toFormat('hh:mm');
+    },
+  },
+  mounted() {
+    // Update Time every 1 second
+    this.updateCurrentTime();
+    setInterval(() => {
+      this.updateCurrentTime();
+    }, 1_000);
   },
 }).mount('#app');
