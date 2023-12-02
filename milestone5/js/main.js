@@ -220,11 +220,12 @@ createApp({
       this.currentClickMessage = index;
     },
 
-    deleteMessage(index) {
+    deleteMessage() {
       this.contacts[this.currentContact].messages.splice(
         this.currentClickMessage,
         1
       );
+      this.currentClickMessage = undefined;
     },
   },
 }).mount('#app');
