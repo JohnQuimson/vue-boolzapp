@@ -40,7 +40,7 @@ createApp({
         },
 
         {
-          name: 'Fabio',
+          name: 'Valde',
           avatar: './img/avatar_2.jpg',
           visible: true,
           messages: [
@@ -62,7 +62,7 @@ createApp({
           ],
         },
         {
-          name: 'Samuele',
+          name: 'Omay',
           avatar: './img/avatar_3.jpg',
           visible: true,
           messages: [
@@ -232,7 +232,7 @@ createApp({
 
     //Time with LUXON
     updateCurrentTime() {
-      this.currentTime = luxon.DateTime.now().toFormat('hh:mm');
+      this.currentTime = luxon.DateTime.now().toFormat('HH:mm');
     },
   },
   mounted() {
