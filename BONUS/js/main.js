@@ -12,13 +12,25 @@ createApp({
       visibleChevron: false,
       visibleDropdownChevron: false,
 
-      botAnswer: 'Ok',
       newMessage: '',
       keyContact: '',
       userChoice: '',
       currentTime: null,
       lastAccess: '',
       isDark: false,
+
+      botAnswer: [
+        'Mai confondere una singola sconfitta con una sconfitta definitiva',
+        'Se non riesci a spiegarlo a un bambino di 6 anni, non l’hai capito nemmeno tu',
+        'Non fingere di essere saggio, ma sii saggio davvero: non abbiamo bisogno di apparire sani, ma di esserlo veramente',
+        'Per ogni minuto che passi arrabbiato perdi sessanta secondi di felicità',
+        'Di fronte agli sciocchi e agli imbecilli esiste un modo solo per rivelare la propria intelligenza: quello di non parlare con loro',
+        'È assurdo dividere le persone in buone o cattive. Le persone o sono affascinanti o sono noiose',
+        'Supera te stesso e supererai il mondo',
+        'Più piccola è la mente più grande è la presunzione',
+        'Ci sono molte persone nel mondo, ma ci sono ancora più volti, perché ognuno ne ha diversi',
+        'Colui che sorride quando le cose vanno male, ha già trovato qualcuno cui dare la colpa',
+      ],
 
       contacts: [
         {
@@ -206,7 +218,8 @@ createApp({
     answerMessage() {
       this.contacts[this.currentContact].messages.push({
         date: this.currentTime,
-        message: this.botAnswer,
+        message:
+          this.botAnswer[Math.floor(Math.random() * this.botAnswer.length) + 1],
         status: 'received',
       });
     },

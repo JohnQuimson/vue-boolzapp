@@ -253,6 +253,7 @@ RIGHT SECTION
   padding: 6px 8px 8px 9px;
   border-radius: 8px;
   padding-right: 30px;
+  max-width: 70%;
 }
 
 .sent {
@@ -304,6 +305,7 @@ RIGHT SECTION
   flex-direction: column;
   align-self: flex-start;
   padding-right: 20px;
+  line-height: 20px;
 }
 
 /* date & time */
