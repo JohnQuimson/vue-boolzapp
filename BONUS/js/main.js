@@ -187,13 +187,15 @@ createApp({
       console.log(`Contatto[${index}]`);
     },
     addMessage() {
-      this.contacts[this.currentContact].messages.push({
-        date: this.currentTime,
-        message: this.newMessage,
-        status: 'sent',
-      });
-      this.newMessage = '';
-      setTimeout(this.answerMessage, 1_000);
+      if (this.newMessage.trim() != '') {
+        this.contacts[this.currentContact].messages.push({
+          date: this.currentTime,
+          message: this.newMessage,
+          status: 'sent',
+        });
+        this.newMessage = '';
+        setTimeout(this.answerMessage, 1_000);
+      }
     },
     answerMessage() {
       this.contacts[this.currentContact].messages.push({
