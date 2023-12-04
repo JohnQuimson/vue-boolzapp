@@ -14,6 +14,7 @@ createApp({
       currentClickMessage: 0,
       userChoice: '',
       currentTime: null,
+      lastAccess: '',
       isDark: false,
 
       contacts: [
@@ -200,7 +201,7 @@ createApp({
     },
     answerMessage() {
       this.contacts[this.currentContact].messages.push({
-        date: this.currentTime, //MODIFICARE QUI
+        date: this.currentTime,
         message: this.botAnswer,
         status: 'received',
       });
@@ -239,7 +240,7 @@ createApp({
 
     //Time with LUXON
     updateCurrentTime() {
-      this.currentTime = luxon.DateTime.now().toFormat('HH:mm');
+      this.currentTime = luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
     },
 
     // Time format
