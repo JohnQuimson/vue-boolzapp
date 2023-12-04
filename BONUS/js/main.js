@@ -221,8 +221,12 @@ createApp({
     },
 
     showDropdownChevron(index) {
-      this.visibleDropdownChevron = true;
-      this.currentClickMessage = index;
+      if (this.visibleDropdownChevron && this.currentClickMessage === index) {
+        this.visibleDropdownChevron = false;
+      } else {
+        this.visibleDropdownChevron = true;
+        this.currentClickMessage = index;
+      }
     },
 
     deleteMessage() {
