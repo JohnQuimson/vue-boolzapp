@@ -63,6 +63,7 @@ LEFT SECTION
   display: flex;
   gap: 20px;
   align-items: center;
+  width: 85%;
 }
 
 .info-profilo {
@@ -172,7 +173,6 @@ LEFT SECTION
 .contact-list-section ul li {
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
 }
 
 .contact-list-section ul li:hover {
@@ -187,13 +187,16 @@ LEFT SECTION
 .last-message {
   font-size: 14px;
   color: #b6b9bb;
-  width: 90%;
+}
+
+.profile-time {
+  width: 15%;
+  text-align: end;
 }
 
 .profile-time span {
   font-size: 12px;
   color: #b6b9bb;
-  width: 10%;
 }
 
 /*
