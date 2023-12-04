@@ -152,7 +152,23 @@
               <div class="icons-myprofile">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-paperclip"></i>
-                <i class="fa-solid fa-ellipsis-vertical"> </i>
+                <div class="menu-chat">
+                  <i
+                    class="fa-solid fa-ellipsis-vertical menu-chat"
+                    @click.stop="showDropdownChevron(contacts[currentContact].messages.indexOf(element))"
+                  ></i>
+                  <ul
+                    class="dropd-list-cont"
+                    v-show="visibleDropdownChevron && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
+                  >
+                    <li>
+                      <p>Cancella messaggi</p>
+                    </li>
+                    <li>
+                      <p>Chiudi chat</p>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <!-- main chat -->
