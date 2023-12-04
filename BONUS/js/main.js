@@ -10,7 +10,7 @@ createApp({
       currentClickMessage: 0,
       // visibles
       visibleChevron: false,
-      visibleDropdownChevron: false,
+      visibleDropdown: false,
 
       newMessage: '',
       keyContact: '',
@@ -199,6 +199,11 @@ createApp({
     };
   },
   methods: {
+    closeWindows() {
+      this.visibleChevron = false;
+      this.visibleDropdown = false;
+    },
+
     changeContact(index) {
       this.currentContact = index;
       console.log(`Contatto[${index}]`);
@@ -239,10 +244,10 @@ createApp({
     },
 
     showDropdownChevron(index) {
-      if (this.visibleDropdownChevron && this.currentClickMessage === index) {
-        this.visibleDropdownChevron = false;
+      if (this.visibleDropdown && this.currentClickMessage === index) {
+        this.visibleDropdown = false;
       } else {
-        this.visibleDropdownChevron = true;
+        this.visibleDropdown = true;
         this.currentClickMessage = index;
       }
     },
@@ -253,6 +258,16 @@ createApp({
         1
       );
       this.currentClickMessage = undefined;
+    },
+
+    deleteAllMessages() {
+      this.contacts[this.currentContact].messages = [];
+    },
+
+    deleteContact() {
+      this.contacts.splice(this.contactIndex, 1);
+      this.contactIndex = 0;
+      this.visibleDropdown = false;
     },
 
     //Time with LUXON

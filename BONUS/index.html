@@ -159,12 +159,12 @@
                   ></i>
                   <ul
                     class="dropd-list-cont"
-                    v-show="visibleDropdownChevron && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
+                    v-show="visibleDropdown && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
                   >
-                    <li>
+                    <li @click="deleteAllMessages()">
                       <p>Cancella messaggi</p>
                     </li>
-                    <li>
+                    <li @click="deleteContact()">
                       <p>Chiudi chat</p>
                     </li>
                   </ul>
@@ -172,17 +172,18 @@
               </div>
             </div>
             <!-- main chat -->
-            <div class="main-chat">
+            <div class="main-chat" @click="closeWindows">
               <div class="cont-chat">
                 <ul class="cont-mess">
                   <li
                     class="message"
                     v-for="(element, index) in contacts[currentContact].messages"
                     :class="element.status"
-                    @click="showChevron"
+                    @click.stop="showChevron"
                   >
                     <div class="top-message">
                       <!-- testo messaggio -->
+                      <p v-if="element.message === ''"></p>
                       <p>{{ element.message }}</p>
                       <!-- Menù dropdown -->
                       <div class="dropdown-cont">
@@ -193,7 +194,7 @@
                         ></i>
                         <ul
                           class="dropd-list-cont"
-                          v-show="visibleDropdownChevron && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
+                          v-show="visibleDropdown && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
                         >
                           <li>
                             <p>Info</p>

@@ -225,6 +225,7 @@ RIGHT SECTION
 
 .menu-chat {
   position: relative;
+  cursor: pointer;
 }
 
 .menu-chat ul {
