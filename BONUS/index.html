@@ -49,12 +49,12 @@
                 </div>
               </div>
               <div class="icons-myprofile">
-                <a href="#">
-                  <i
-                    @click="toggleDark"
-                    class="fa-solid fa-circle-half-stroke"
-                  ></i>
-                </a>
+                <i
+                  @click="toggleDark"
+                  class="fa-solid fa-circle-half-stroke"
+                  role=""
+                ></i>
+
                 <a href="#">
                   <i class="fa-solid fa-circle-notch"></i>
                 </a>
@@ -119,7 +119,10 @@
                     </div>
                   </div>
                   <div class="profile-time">
-                    <span>ora ultimo messaggio</span>
+                    <span
+                      >{{ onlyTime(contact.messages[contact.messages.length -
+                      1].date) }}</span
+                    >
                   </div>
                 </li>
                 <!-- </template> -->
