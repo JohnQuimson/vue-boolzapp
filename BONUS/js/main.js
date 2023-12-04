@@ -5,13 +5,16 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      //currents
       currentContact: 0,
-      newMessage: '',
-      botAnswer: 'Ok',
-      keyContact: '',
+      currentClickMessage: 0,
+      // visibles
       visibleChevron: false,
       visibleDropdownChevron: false,
-      currentClickMessage: 0,
+
+      botAnswer: 'Ok',
+      newMessage: '',
+      keyContact: '',
       userChoice: '',
       currentTime: null,
       lastAccess: '',
@@ -189,12 +192,13 @@ createApp({
       console.log(`Contatto[${index}]`);
     },
     addMessage() {
-      if (this.newMessage.trim() != '') {
+      if (this.newMessage.trim().length != '') {
         this.contacts[this.currentContact].messages.push({
           date: this.currentTime,
           message: this.newMessage,
           status: 'sent',
         });
+
         this.newMessage = '';
         setTimeout(this.answerMessage, 1_000);
       }

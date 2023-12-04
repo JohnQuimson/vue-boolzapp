@@ -206,9 +206,13 @@
                 />
               </div>
               <div class="footer-input-right">
-                <a href="#">
-                  <i class="fa-solid fa-microphone"></i>
-                </a>
+                <i v-if="newMessage === ''" class="fa-solid fa-microphone"></i>
+                <i
+                  v-else
+                  role="button"
+                  @click="addMessage"
+                  class="fa-solid fa-paper-plane"
+                ></i>
               </div>
             </div>
           </div>
