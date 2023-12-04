@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+.master-container {
   font-family: 'Lato', sans-serif;
   background: linear-gradient(to top, #dcdbd2 85%, #009688 15%);
   height: 100vh;
@@ -394,4 +394,10 @@ input {
 
 input:focus {
   outline: none;
+}
+
+/* Dark Mode */
+
+.dark {
+  background-color: #0c1317;
 }

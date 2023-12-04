@@ -14,6 +14,7 @@ createApp({
       currentClickMessage: 0,
       userChoice: '',
       currentTime: null,
+      isDark: false,
 
       contacts: [
         {
@@ -235,6 +236,17 @@ createApp({
     //Time with LUXON
     updateCurrentTime() {
       this.currentTime = luxon.DateTime.now().toFormat('HH:mm');
+    },
+
+    // Time format
+    onlyTime(time) {
+      return luxon.DateTime.fromFormat(time, 'dd/MM/yyyy HH:mm:ss').toFormat(
+        'HH:mm'
+      );
+    },
+
+    toggleDark() {
+      this.isDark = !this.isDark;
     },
   },
   mounted() {
