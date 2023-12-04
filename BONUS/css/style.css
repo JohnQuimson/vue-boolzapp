@@ -271,32 +271,40 @@ RIGHT SECTION
   justify-content: space-between;
 }
 
-.cont-chat li .dropdown-cont {
-  align-self: flex-end;
-  text-align: start;
+/* DropDown Menù */
+.dropdown-cont {
+  position: absolute;
+  right: 5px;
 }
 
-.cont-chat li .dropdown-cont i {
-  font-size: 12px;
+.dropdown-cont i {
   color: #b9bfbb;
   cursor: pointer;
 }
 
-.dropd-list-cont {
+.dropdown-cont ul {
   background-color: #ffffff;
-  z-index: 10;
-  position: absolute;
+  z-index: 99;
+  position: fixed;
   padding: 8px 0;
   border-radius: 5px;
+  width: 150px;
 }
 
-.dropd-list-cont li {
-  padding: 5px 15px;
+.dropdown-cont ul li {
+  padding: 9px 0;
+  max-width: 100%;
+  border-radius: 0;
 }
 
-.dropd-list-cont li:hover {
+.dropdown-cont ul li:hover {
   background-color: #6b7376;
   cursor: pointer;
+}
+
+.dropdown-cont ul li p {
+  padding: 0 24px;
+  font-size: 14px;
 }
 
 /* text */

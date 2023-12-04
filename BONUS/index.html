@@ -152,7 +152,7 @@
               <div class="icons-myprofile">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-paperclip"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <i class="fa-solid fa-ellipsis-vertical"> </i>
               </div>
             </div>
             <!-- main chat -->
@@ -179,8 +179,12 @@
                           class="dropd-list-cont"
                           v-show="visibleDropdownChevron && contacts[currentContact].messages.indexOf(element) === currentClickMessage"
                         >
-                          <li>Info</li>
-                          <li @click="deleteMessage">Delete message</li>
+                          <li>
+                            <p>Info</p>
+                          </li>
+                          <li @click="deleteMessage">
+                            <p>Delete message</p>
+                          </li>
                         </ul>
                       </div>
                     </div>
