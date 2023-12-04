@@ -142,7 +142,11 @@
                 </div>
                 <div class="info-profilo">
                   <strong>{{ contacts[currentContact].name }}</strong>
-                  <p id="last-access">Ultimo accesso oggi alle 12:00</p>
+                  <p class="last-access">
+                    {{ `ultimo accesso alle:
+                    ${onlyTime(contacts[currentContact].messages[contacts[currentContact].messages.length
+                    - 1].date)}` }}
+                  </p>
                 </div>
               </div>
               <div class="icons-myprofile">

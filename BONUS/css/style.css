@@ -218,8 +218,8 @@ RIGHT SECTION
   background-color: #eaeaea;
 }
 
-#last-access {
-  font-size: 12px;
+.last-access {
+  font-size: 15px;
   color: #6b7376;
 }
 /* main chat */
