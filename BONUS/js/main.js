@@ -11,13 +11,15 @@ createApp({
       // visibles
       visibleChevron: false,
       visibleDropdown: false,
+      visibleNewChat: false,
 
       newMessage: '',
       keyContact: '',
       userChoice: '',
       currentTime: null,
       lastAccess: '',
-      isDark: false,
+      newName: '',
+      newSurname: '',
 
       botAnswer: [
         'Mai confondere una singola sconfitta con una sconfitta definitiva',
@@ -241,6 +243,7 @@ createApp({
 
     showChevron() {
       this.visibleChevron = true;
+      this.visibleDropdown = false;
     },
 
     showDropdownChevron(index) {
@@ -250,6 +253,15 @@ createApp({
         this.visibleDropdown = true;
         this.currentClickMessage = index;
       }
+      this.visibleChevron = false;
+    },
+
+    showNewChat() {
+      this.visibleNewChat = true;
+    },
+
+    hideNewChat() {
+      this.visibleNewChat = false;
     },
 
     deleteMessage() {
@@ -262,12 +274,14 @@ createApp({
 
     deleteAllMessages() {
       this.contacts[this.currentContact].messages = [];
+      this.currentContact = null;
     },
 
     deleteContact() {
       this.contacts.splice(this.contactIndex, 1);
       this.contactIndex = 0;
       this.visibleDropdown = false;
+      this.visibleChevron = false;
     },
 
     //Time with LUXON

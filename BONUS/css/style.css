@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .container {
@@ -439,4 +440,112 @@ input:focus {
 
 .dark {
   background-color: #0c1317;
+}
+
+/* 
+---------------------
+NEW CHAT
+---------------------
+*/
+.cont-new-chat {
+  position: absolute;
+  height: 40vh;
+  width: 30vw;
+  background-color: #009688;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-around;
+}
+
+.cont-intestaz-newchat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cont-new-chat-img {
+  width: 100px;
+  height: 100px;
+}
+
+.cont-new-chat-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cont-new-chat h3 {
+  text-transform: uppercase;
+}
+
+.cont-personal-data {
+  display: flex;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.section-name,
+.section-surname {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  font-size: 14px;
+  color: #161616;
+  gap: 5px;
+}
+
+.section-name input,
+.section-surname input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+hr {
+  width: 300px;
+  border-color: #dcdbd2;
+}
+
+.cont-new-img {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 5px;
+  color: #161616;
+}
+
+.cont-new-img input {
+  padding: 0;
+}
+
+.cont-newchat-btn {
+  display: flex;
+  gap: 20px;
+}
+
+.cont-newchat-btn button {
+  background-color: #d3d3d3;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.cont-newchat-btn .invia {
+  background-color: #3cdb5f;
+  color: white;
+}
+
+.cont-newchat-btn .dismiss:hover {
+  background-color: #8b8b8b;
+  color: white;
+  cursor: pointer;
+}
+
+.cont-newchat-btn .invia:hover {
+  color: black;
+  cursor: pointer;
 }

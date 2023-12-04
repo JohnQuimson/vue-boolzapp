@@ -59,7 +59,7 @@
                   <i class="fa-solid fa-circle-notch"></i>
                 </a>
                 <a href="#">
-                  <i class="fa-solid fa-message"></i>
+                  <i @click="showNewChat" class="fa-solid fa-message"></i>
                 </a>
                 <a href="#">
                   <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -184,7 +184,7 @@
                     <div class="top-message">
                       <!-- testo messaggio -->
                       <p v-if="element.message === ''"></p>
-                      <p>{{ element.message }}</p>
+                      <p v-else>{{ element.message }}</p>
                       <!-- Menù dropdown -->
                       <div class="dropdown-cont">
                         <i
@@ -236,6 +236,51 @@
                 ></i>
               </div>
             </div>
+          </div>
+        </div>
+        <div v-show="visibleNewChat" class="cont-new-chat">
+          <div class="cont-intestaz-newchat">
+            <div class="cont-new-chat-img">
+              <img src="../img/icon.ico" alt="new-chat-icon" />
+            </div>
+            <h3>Add new chat</h3>
+          </div>
+          <!-- Personal Data -->
+          <div class="cont-personal-data">
+            <!-- nome -->
+            <div class="section-name">
+              <label for="">First Name*</label>
+              <input
+                type="text"
+                id="new-name"
+                placeholder="Inserisci il tuo nome"
+                v-model="newName"
+                required
+              />
+            </div>
+            <!-- cognome -->
+            <div class="section-surname">
+              <label for="">Last Name</label>
+              <input
+                type="text"
+                id="new-surname"
+                placeholder="Inserisci il tuo cognome"
+                v-model="newSurname"
+              />
+            </div>
+          </div>
+          <hr />
+          <!-- Immagine -->
+          <div class="cont-new-img">
+            <label for="formFile" class="form-label">Immagine profilo</label>
+            <input type="file" id="formFile" v-model="newProfPic" />
+          </div>
+          <!-- Buttons -->
+          <div class="cont-newchat-btn">
+            <button @click="hideNewChat" class="dismiss">annulla</button>
+            <button class="invia">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
           </div>
         </div>
       </div>
