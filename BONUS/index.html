@@ -171,7 +171,8 @@
                 </div>
               </div>
             </div>
-            <!-- main chat -->
+
+            <!-- MAIN CHAT  -->
             <div class="main-chat" @click="closeWindows">
               <div class="cont-chat">
                 <ul class="cont-mess">
@@ -179,7 +180,8 @@
                     class="message"
                     v-for="(element, index) in contacts[currentContact].messages"
                     :class="element.status"
-                    @click.stop="showChevron"
+                    @mouseover="visibleChevron = true"
+                    @mouseleave="visibleChevron = false"
                   >
                     <div class="top-message">
                       <!-- testo messaggio -->
